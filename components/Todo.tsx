@@ -27,8 +27,7 @@ const Todo = ({}: taskProps) => {
         if (accessToken !== null) {
           const task = await fetchUserTask(accessToken)
 
-          // Wrap the single user in an array
-          setOneuserTask([task])
+          setOneuserTask(task)
         } else {
           console.error("Access token is null")
         }
@@ -40,7 +39,7 @@ const Todo = ({}: taskProps) => {
     }
 
     fetchData()
-  }, [auth])
+  }, [auth]) //run the effect whenever auth changes to ensure working with the latest authentication information.
 
   const isDataEmpty =
     !Array.isArray(oneUserTask) || oneUserTask.length < 1 || !oneUserTask

@@ -44,6 +44,6 @@ export interface FilterProps {
 export interface taskProps {
   id: number
   task: string
-  date: string
-  time: string
+  dateoftask: string
+  timeoftask: string
 }
