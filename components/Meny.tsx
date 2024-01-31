@@ -42,29 +42,18 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
         }
       )
 
-      console.log(
-        "här kommer tokenen, innan den sätts till null",
-        auth.accessToken
-      )
-      // Om anropet lyckas, uppdatera access-token i autentiseringskontexten
       auth.setAccessToken(null)
-      //auth.setAccessToken("")
-      console.log(
-        "här kommer tokenen, är den satt till null?",
-        auth.accessToken
-      )
+      localStorage.removeItem("accessToken")
 
-      // Visa popup eller göra andra åtgärder om användaren är utloggad
       alert("Du är nu utloggad!")
 
-      // Eventuell navigering till annan sida efter utloggning
       router.push("/")
     } catch (error) {
       console.error("Error logging out:", error)
     }
   }
 
-  console.log("är den satt till null nu då?", auth.accessToken)
+  console.log("är den satt till null nu då från meny?", auth.accessToken)
   return (
     <nav className="">
       <div className="">

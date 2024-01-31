@@ -37,6 +37,7 @@ export default function LogInPage() {
       }
       // Sparar access token i autentiseringskontexten
       auth.setAccessToken(response.data.access_token)
+
       console.log(
         "skriver ut response.data.access_token",
         response.data.access_token

@@ -46,4 +46,5 @@ export interface taskProps {
   task: string
   dateoftask: string
   timeoftask: string
+  isPerformed: boolean
 }

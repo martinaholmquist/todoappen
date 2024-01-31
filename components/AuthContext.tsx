@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 
 interface AuthContextProps {
   accessToken: string | null
@@ -13,7 +13,23 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined)
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [accessToken, setAccessToken] = useState<string | null>(null)
+  const [accessToken, setAccessTokenState] = useState<string | null>(null)
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("accessToken")
+    if (storedToken) {
+      setAccessTokenState(storedToken)
+    }
+  }, [])
+
+  const setAccessToken = (token: string | null) => {
+    setAccessTokenState(token)
+    if (token) {
+      localStorage.setItem("accessToken", token)
+    } else {
+      localStorage.removeItem("accessToken")
+    }
+  }
 
   const getAccessToken = () => {
     return accessToken

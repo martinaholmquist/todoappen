@@ -98,3 +98,22 @@ export async function fetchUserTask(accessToken: string) {
   console.log(result)
   return result
 }
+
+export async function updateTask(accessToken: string) {
+  const response = await fetch(
+    "http://localhost:5000/api/tasks/updatetaskperformed",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+      cache: "no-cache",
+    }
+  )
+
+  const result = await response.json()
+  console.log(result)
+  return result
+}
