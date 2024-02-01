@@ -1,14 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { taskProps } from "@/types"
 import CustomButton from "./CustomButton"
 import Image from "next/image"
 import { AlarmClockCheck, Calendar } from "lucide-react"
-import { updateTask } from "@/utils"
 import axios from "axios"
 import { useAuth } from "@/components/AuthContext"
-import Todo from "./Todo"
 import { useRouter } from "next/navigation"
 
 interface UserCardProps {
@@ -55,18 +53,18 @@ const UserCard = ({ tasks }: UserCardProps) => {
   }
 
   return (
-    <div className="family-card group">
+    <div className="todo-card group">
       <div className="flex w-full justify-between">
         <div className="flex items-center gap-2">
           <AlarmClockCheck />
-          <p className="family-card__content-title">
+          <p className="todo-card__content-title">
             <p>{timeoftask}</p>
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <Calendar />
-          <p className="family-card__content-title">
+          <p className="todo-card__content-title">
             <p>{dateoftask}</p>
           </p>
         </div>
@@ -79,32 +77,39 @@ const UserCard = ({ tasks }: UserCardProps) => {
       </div>
 
       <div className="relative w-full h-32 my-3 object-contain">
-        <Image
-          src="/green-check-mark-verified-circle-16223.svg"
-          fill
-          priority
-          alt="user pic"
-          className="object-contain"
-        />
-      </div>
-
-      <div className="my-6 flex w-full justify-center">
-        <p className="text-[30px] leading-[26px] font-bold capitalize">
-          {isPerformed ? ` är klar` : ` är inte klar`}
-        </p>
-      </div>
-
-      <div className="relative flex  mt-10">
-        <div className="family-card__btn-container ">
-          <CustomButton
-            containerStyles="w-full  py-[16px]
-            rounded-full bg-[#41bd47]"
-            textStyles="text-white text-[20px] leading-[17px]"
-            title="Klar?"
-            handleClick={handleTaskUpdate}
+        {isPerformed ? (
+          <Image
+            src="/green-check-mark-verified-circle-16223.svg"
+            fill
+            priority
+            alt="user pic"
+            className="object-contain"
           />
-        </div>
+        ) : (
+          <Image
+            src="/redcross.svg"
+            fill
+            priority
+            alt="user pic"
+            className="object-contain"
+          />
+        )}
       </div>
+
+      {/* Visa knappen endast om uppgiften inte är klar */}
+      {!isPerformed && (
+        <div className="relative flex  mt-10">
+          <div className="todo-card__btn-container ">
+            <CustomButton
+              containerStyles="w-full  py-[16px]
+            rounded-full bg-[#41bd47]"
+              textStyles="text-white text-[20px] leading-[17px]"
+              title="Klar?"
+              handleClick={handleTaskUpdate}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Success Modal */}
       {showSuccessModal && (

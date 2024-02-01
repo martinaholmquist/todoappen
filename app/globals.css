@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fuggles&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,15 +13,6 @@
 
 .text-primary {
   color: #121d23; /* Här ersätter du med din önskade färgkod  #571D26  och  #121d23 */
-}
-
-.font-secondary {
-  font-family: "Fuggles", sans-serif;
-}
-
-.font-secondary-specing {
-  font-family: "Fuggles", sans-serif;
-  letter-spacing: 2px; /* Justera detta värde efter önskat avstånd */
 }
 
 /* START: General styles */
@@ -49,9 +39,7 @@
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
 }
-/* END: General styles */
 
-/* START: Hero styles */
 .hero {
   @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
 }
@@ -60,104 +48,41 @@
   @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold text-[#41bd47];
 }
 
-.hero__image-container {
-  @apply xl:flex-[1.5] flex justify-center items-center w-full xl:h-screen;
-}
-
-.hero__image {
-  @apply relative xl:w-2/4 w-[80%] xl:h-full h-[300px] z-0;
-}
-/*  DESSA BÖR JAG KUNNA TA BORT!!!!!!!!!!!!!!!!!!!!!!!!!!
-.hero__image-overlay {
-  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
-}
-*/
-
-/* END: Hero styles */
-
-/* START: Home styles */
-
-.home__text-container {
-  @apply flex flex-col items-start justify-start gap-y-2.5 text-primary;
-}
-
-.home__filters {
-  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
-}
-
-.home__filter-container {
-  @apply flex justify-start flex-wrap items-center gap-2;
-}
-
-.home__familys-wrapper {
+.home__todos-wrapper {
   @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
 }
 
 .home__error-container {
   @apply mt-16 flex justify-center items-center flex-col gap-2;
 }
-/* END: Home styles  #746564   #DFF1F2   #CAB0AE*/
+.home__profile-container {
+  @apply mt-16 flex justify-center items-center flex-col gap-2;
+}
 
-/* START: Card styles #FFDEDB*/
-.family-card {
+.todo-card {
   @apply flex flex-col p-6 justify-center items-start text-primary bg-[#B6D1DE] hover:bg-white hover:shadow-md rounded-3xl;
 }
 
-.family-card__content {
-  @apply w-full flex justify-between items-start gap-2;
-}
-
-.family-card__content-title {
+.todo-card__content-title {
   @apply text-[22px] leading-[26px] font-bold capitalize;
 }
 
-.family-card__image {
-  @apply relative w-full h-40 my-3 object-contain;
-}
-
-.family-card__icon-container {
-  @apply flex group-hover:invisible w-full justify-between text-grey;
-}
-
-.family-card__icon {
-  @apply flex flex-col justify-center items-center gap-2;
-}
-
-.family-card__icon-text {
-  @apply text-[14px] leading-[17px];
-}
-
-.family-card__btn-container {
+.todo-card__btn-container {
   @apply hidden group-hover:flex absolute bottom-0 mx-auto z-10;
 }
 
-/* END:  Card styles */
-
-/* START:  Details styles */
-.family-details__dialog-panel {
-  @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
-}
-
-.family-details__close-btn {
-  @apply absolute top-2 right-2 z-10 w-fit p-2 bg-[#DCCDB8] rounded-full;
-}
-
-.family-details__main-image {
-  @apply relative w-full h-40  bg-cover bg-center rounded-lg;
-}
-/* END:  Details styles */
-
-/* START: Custom Filter styles 127px*/
 .custom-filter__btn {
   @apply relative w-full min-w-[280px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
+}
+
+.add-todo__btn {
+  @apply w-2/4 flex items-center justify-center  cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
 }
 
 .custom-filter__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
-/* END: Custom Filter styles */
 
-/* START: Footer styles */
 .footer {
   @apply flex flex-col text-primary  mt-5 border-t border-gray-100;
 }
@@ -185,9 +110,7 @@
 .footer__copyrights-link {
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
-/* END: Footer styles */
 
-/* START: searchbar styles */
 .searchbar1 {
   @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
 }
@@ -226,7 +149,7 @@
   margin-top: -8px; /* Justera detta värde för att centrera texten vertikalt */
 }
 
-.myBtn {
+.myBtnTodo {
   @apply fixed bottom-20 z-10 right-8 text-white text-lg bg-primary-blue px-6 py-4 rounded-xl;
 }
 

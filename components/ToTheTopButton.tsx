@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 
 const ToTheTopButton = () => {
-  const [showBtn, setShowBtn] = useState("myBtn none")
+  const [showBtn, setShowBtn] = useState("myBtnTodo none")
 
   // When the user scrolls down 20px from the top of the document, show the button
 
@@ -15,13 +15,12 @@ const ToTheTopButton = () => {
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
     ) {
-      setShowBtn("myBtn")
+      setShowBtn("myBtnTodo")
     } else {
       setShowBtn("none")
     }
   }
 
-  // When the user clicks on the button, scroll to the top of the document
   function topFunction() {
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0
@@ -31,7 +30,7 @@ const ToTheTopButton = () => {
     <div>
       <button
         onClick={topFunction}
-        id="myBtn"
+        id="myBtnTodo"
         className={showBtn}
         title="Go to top"
       >

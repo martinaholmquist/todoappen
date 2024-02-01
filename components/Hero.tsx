@@ -1,10 +1,7 @@
 "use client"
-import Image from "next/image"
 import React from "react"
 
 const Hero = () => {
-  const handleScroll = () => {}
-
   return (
     <div className="Hero">
       <div className="pt-36 ">

@@ -9,10 +9,6 @@ import { authProps } from "@/types"
 import { UserProps } from "@/types"
 import { useAuth } from "@/components/AuthContext"
 
-interface onSignupProps {
-  user: UserProps
-}
-
 export default function LogInPage() {
   const router = useRouter()
   const [user, setUser] = useState({
@@ -35,7 +31,7 @@ export default function LogInPage() {
         setErrorMessage("Ogiltigt svar från servern")
         return
       }
-      // Sparar access token i autentiseringskontexten
+
       auth.setAccessToken(response.data.access_token)
 
       console.log(
@@ -45,15 +41,8 @@ export default function LogInPage() {
       router.push("/todo")
     } catch (error: any) {
       if (error.response) {
-        // Server svarade med en felstatuskod (t.ex. 4xx, 5xx)
         console.error("Response error:", error.response.data)
-        console.error("Status code:", error.response.status)
-        console.error("Headers:", error.response.headers)
-      } else if (error.request) {
-        // Servern svarade inte alls
-        console.error("Request error:", error.request)
       } else {
-        // Ett annat fel inträffade
         console.error("Other error:", error.message)
       }
       console.log("Signup failed", error.message)
@@ -69,20 +58,16 @@ export default function LogInPage() {
       <div>
         <section className="relative z-10 pt-30 flex-col flex justify-center items-center h-full w-full">
           <div className="flex h-full items-center justify-center lg:justify-between">
-            {/* Left column container with background*/}
             <div className="w-full h-full flex-wrap items-center justify-center lg:justify-between">
               <Image
                 src="/green-check-mark-verified-circle-16223.svg"
-                alt="failjemiddag logo"
+                alt="check logo"
                 width={250}
                 height={250}
               />
 
-              {/* Right column container */}
               <div className="mt-10 mb-12 w-full h-full flex-wrap items-center justify-center lg:justify-between">
                 <form>
-                  {/* Sign in section */}
-
                   {/* Email input */}
                   <div className="relative mb-6">
                     <input

@@ -40,29 +40,7 @@ export async function fetchAllUsers(filters: FilterProps) {
   }
 }
 
-export async function fetchCities() {
-  const response = await fetch("http://localhost:5000/api/v1/users/cities", {
-    cache: "no-cache",
-  })
-
-  const result = await response.json()
-  console.log(result)
-  return result
-}
-
-export async function fetchP() {
-  const response = await fetch(
-    "http://localhost:5000/api/v1/users/preferences",
-    {
-      cache: "no-cache",
-    }
-  )
-
-  const result = await response.json()
-  console.log(result)
-  return result
-}
-
+/*
 export async function fetchAllUser() {
   const response = await fetch("http://localhost:5000/api/users/alluserinfo", {
     cache: "no-cache",
@@ -72,6 +50,7 @@ export async function fetchAllUser() {
   console.log(result)
   return result
 }
+
 
 export async function fetchUser(accessToken: string) {
   const response = await fetch("http://localhost:5000/api/users/currentuser", {
@@ -84,7 +63,7 @@ export async function fetchUser(accessToken: string) {
   const result = await response.json()
   console.log(result)
   return result
-}
+}*/
 
 export async function fetchUserTask(accessToken: string) {
   const response = await fetch("http://localhost:5000/api/tasks/mytasks", {
@@ -99,6 +78,7 @@ export async function fetchUserTask(accessToken: string) {
   return result
 }
 
+/*
 export async function updateTask(accessToken: string) {
   const response = await fetch(
     "http://localhost:5000/api/tasks/updatetaskperformed",
@@ -116,4 +96,4 @@ export async function updateTask(accessToken: string) {
   const result = await response.json()
   console.log(result)
   return result
-}
+}*/

@@ -1,16 +1,15 @@
 "use client"
 import Link from "next/link"
-import { FC, useEffect, useState } from "react"
-import Image from "next/image"
+import { FC, useState } from "react"
 import { Menu, X } from "lucide-react"
-import axios from "axios" // Importera axios för att göra HTTP-anrop
+import axios from "axios"
 import { useAuth } from "@/components/AuthContext"
-import router, { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 const MobileNavbarList = (props: { titelRef: string; titel: string }) => {
   return (
     <>
-      <li className=" pb-2 text-black hover:text-primary">
+      <li className="pb-2 mr-4 text-[20px] leading-[26px] font-bold">
         <Link href={props.titelRef}>{props.titel}</Link>
       </li>
     </>
@@ -21,7 +20,7 @@ interface MobileNavBarProps {}
 
 const Meny: FC<MobileNavBarProps> = ({}) => {
   const [isOpen, setOpen] = useState(false)
-  const auth = useAuth() // Hämta autentiseringskontexten
+  const auth = useAuth()
 
   const router = useRouter()
 
@@ -31,7 +30,6 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
 
   const handleLogout = async () => {
     try {
-      // Gör ett anrop till logout-endpoint och inkludera token i header
       await axios.post(
         "http://localhost:5000/api/users/logout",
         {},
@@ -58,19 +56,20 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
     <nav className="">
       <div className="">
         <button onClick={toggleMenu}>
-          <Menu className={`text-black w-8 h-8 ${isOpen && "hidden"}`} />
+          <Menu className={`text-black w-12 h-12 ${isOpen && "hidden"}`} />
         </button>
         <button onClick={toggleMenu}>
-          <X className={`text-black w-8 h-8 ${!isOpen && "hidden"}`} />
+          <X className={`text-black w-12 h-12 ${!isOpen && "hidden"}`} />
         </button>
       </div>
 
       {isOpen && (
-        <ul className="absolute top-2 left-2/3 mt- ">
+        <ul className=" absolute top-4 left-64">
           <MobileNavbarList titel={"HEM"} titelRef={"/"} />
-          <MobileNavbarList titel={"PROFIL"} titelRef={"/profil"} />
+          <MobileNavbarList titel={"PROFIL"} titelRef={"/profile"} />
+          <MobileNavbarList titel={"TODO"} titelRef={"/todo"} />
           <li
-            className="pb-2 text-black hover:text-primary cursor-pointer"
+            className="pb-2 text-[20px] leading-[26px] font-bold cursor-pointer"
             onClick={handleLogout}
           >
             LOGGA UT

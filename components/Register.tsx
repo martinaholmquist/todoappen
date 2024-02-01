@@ -48,21 +48,13 @@ export default function SignupPage() {
         response.data.access_token
       )
 
-      router.push("/familjeapp")
+      router.push("/todo")
     } catch (error: any) {
       if (error.response) {
-        // Server svarade med en felstatuskod (t.ex. 4xx, 5xx)
         console.error("Response error:", error.response.data)
-        console.error("Status code:", error.response.status)
-        console.error("Headers:", error.response.headers)
-      } else if (error.request) {
-        // Servern svarade inte alls
-        console.error("Request error:", error.request)
       } else {
-        // Ett annat fel inträffade
         console.error("Other error:", error.message)
       }
-
       console.log("Register failed, try again!!!!", error.message)
       setErrorMessage("Registrering misslyckades")
     }
@@ -76,32 +68,23 @@ export default function SignupPage() {
       <div>
         <section className="relative z-10 pt-30 flex-col flex justify-center items-center h-full w-full">
           <div className="flex h-full items-center justify-center lg:justify-between">
-            {/* Left column container with background*/}
             <div className="w-full h-full flex-wrap items-center justify-center lg:justify-between">
               <div>
                 <Image
-                  src="/spoonForkPicEdited.png"
-                  alt="failjemiddag logo"
-                  width={300}
-                  height={300}
+                  src="/green-check-mark-verified-circle-16223.svg"
+                  alt="check logo"
+                  width={250}
+                  height={250}
                 />
               </div>
 
-              {/* Right column container */}
               <div className="mt-10 mb-12 w-full h-full flex-wrap items-center justify-center lg:justify-between">
                 <form>
-                  {/* Separator between social media sign in and email/password sign in */}
-                  <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                    <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
-                      Registrera konto
-                    </p>
-                  </div>
-
                   {/* Username input */}
                   <div className="relative mb-6">
                     <input
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
+                      className="text-[#41bd47] peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
                       id="username"
                       placeholder="Username"
                       value={user.username}
@@ -111,9 +94,9 @@ export default function SignupPage() {
                     />
                     <label
                       htmlFor="username"
-                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out ${
+                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-[#41bd47] transition-all duration-200 ease-out ${
                         user.username
-                          ? "text-primary -translate-y-[1.15rem] scale-[0.8]"
+                          ? "text-[#41bd47] -translate-y-[1.15rem] scale-[0.8]"
                           : ""
                       }`}
                     >
@@ -125,7 +108,7 @@ export default function SignupPage() {
                   <div className="relative mb-6">
                     <input
                       type="text"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
+                      className="text-[#41bd47] peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
                       id="email"
                       placeholder="Email"
                       value={user.email}
@@ -135,9 +118,9 @@ export default function SignupPage() {
                     />
                     <label
                       htmlFor="email"
-                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out ${
+                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-[#41bd47] transition-all duration-200 ease-out ${
                         user.email
-                          ? "text-primary -translate-y-[1.15rem] scale-[0.8]"
+                          ? "text-[#41bd47] -translate-y-[1.15rem] scale-[0.8]"
                           : ""
                       }`}
                     >
@@ -149,7 +132,7 @@ export default function SignupPage() {
                   <div className="relative mb-6">
                     <input
                       type="password"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
+                      className="text-[#41bd47] peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none shadow-sm"
                       id="password"
                       placeholder="Password"
                       value={user.password}
@@ -159,9 +142,9 @@ export default function SignupPage() {
                     />
                     <label
                       htmlFor="password"
-                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out ${
+                      className={`pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-[#41bd47] transition-all duration-200 ease-out ${
                         user.password
-                          ? "text-primary -translate-y-[1.15rem] scale-[0.8]"
+                          ? "text-[#41bd47] -translate-y-[1.15rem] scale-[0.8]"
                           : ""
                       }`}
                     >
@@ -174,19 +157,19 @@ export default function SignupPage() {
                     <button
                       title="Sign Up"
                       type="button"
-                      className="text-primary-blue inline-block rounded px-7 pb-2.5 pt-3 text-sm shadow-lg transition duration-150 ease-in-out"
+                      className="text-[#41bd47] inline-block rounded px-7 pb-2.5 pt-3 text-sm shadow-lg transition duration-150 ease-in-out"
                       onClick={onSignup}
                     >
-                      Logga in
+                      Registrera dig
                     </button>
                   </div>
-                  <Link href={"/familjeapp"}>
+                  <Link href={"/todo"}>
                     <button
-                      title="familjesidan"
+                      title="todo"
                       type="button"
-                      className=" text-primary-blue inline-block rounded px-7 pb-2.5 pt-6 text-sm shadow-lg transition duration-150 ease-in-out"
+                      className=" text-[#41bd47] inline-block rounded px-7 pb-2.5 pt-6 text-sm shadow-lg transition duration-150 ease-in-out"
                     >
-                      Familjesidan så länge
+                      todo så länge
                     </button>
                   </Link>
 

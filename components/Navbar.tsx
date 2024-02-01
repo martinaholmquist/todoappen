@@ -10,8 +10,8 @@ const NavBar = () => (
         <Image
           src="/green-check-mark-verified-circle-16223.svg"
           alt="Har kan jag sätta en logga"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className="object-contain"
         />
       </Link>
