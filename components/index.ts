@@ -12,6 +12,7 @@ import Register from "./Register"
 import ToTheTopButton from "./ToTheTopButton"
 import Meny from "./Meny"
 import CreateToDo from "./CreateToDo"
+import EndAccount from "./EndAccount"
 
 export {
   Hero,
@@ -27,4 +28,5 @@ export {
   Profile,
   ChangePassword,
   CreateToDo,
+  EndAccount,
 }

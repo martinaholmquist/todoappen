@@ -43,8 +43,6 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
       auth.setAccessToken(null)
       localStorage.removeItem("accessToken")
 
-      alert("Du är nu utloggad!")
-
       router.push("/")
     } catch (error) {
       console.error("Error logging out:", error)
@@ -65,7 +63,6 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
 
       {isOpen && (
         <ul className=" absolute top-4 left-64">
-          <MobileNavbarList titel={"HEM"} titelRef={"/"} />
           <MobileNavbarList titel={"PROFIL"} titelRef={"/profile"} />
           <MobileNavbarList titel={"TODO"} titelRef={"/todo"} />
           <li
