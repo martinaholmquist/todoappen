@@ -1,14 +1,11 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import UserCard from "@/components/UserCard"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import { AdminProps } from "@/types"
-import ToTheTopButton from "@/components/ToTheTopButton"
 import { useAuth } from "@/components/AuthContext"
 import { fetchAllUser } from "@/utils"
-import Link from "next/link"
 import AdminCard from "./AdminCard"
 
 const AdminPage = ({}: AdminProps) => {

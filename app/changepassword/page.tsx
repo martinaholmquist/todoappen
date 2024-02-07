@@ -7,8 +7,6 @@ interface Props {
 }
 
 const Page: NextPage<Props> = () => {
-  // Antag att searchParams har blivit definierad tidigare eller hämtas dynamiskt
-
   return (
     <>
       <div>

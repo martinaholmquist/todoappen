@@ -7,7 +7,6 @@ import ChangePassword from "./ChangePassword"
 import Todo from "./Todo"
 import LogIn from "./LogIn"
 import Register from "./Register"
-import ToTheTopButton from "./ToTheTopButton"
 import Meny from "./Meny"
 import CreateToDo from "./CreateToDo"
 import EndAccount from "./EndAccount"
@@ -22,7 +21,6 @@ export {
   Todo,
   LogIn,
   Register,
-  ToTheTopButton,
   Meny,
   Profile,
   ChangePassword,

@@ -15,7 +15,6 @@
   color: #121d23;
 }
 
-/* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }
@@ -82,78 +81,6 @@
 .custom-filter__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
-
-/*
-
-.footer {
-  @apply flex flex-col text-primary  mt-5 border-t border-gray-100;
-}
-
-.footer__links-container {
-  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
-}
-
-.footer__rights {
-  @apply flex flex-col justify-start items-start gap-6;
-}
-
-.footer__links {
-  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
-}
-
-.footer__link {
-  @apply flex flex-col gap-6 text-base min-w-[170px];
-}
-
-.footer__copyrights {
-  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
-}
-
-.footer__copyrights-link {
-  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
-}
-
-.searchbar1 {
-  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
-}
-
-.searchbar__item {
-  @apply p-2 flex-1 max-sm:w-full flex justify-start items-center relative;
-}
-
-.searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
-}*/
-
-/*
-.reset-button {
-  @apply ml-8;
-  position: relative;
-}
-*/
-/* START: circle for empty knapp */
-
-/*
-.circle-border {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px; 
-  height: 60px; 
-  border: 2px solid rgb(26, 25, 25);
-  border-radius: 50%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reset-text {
-  display: block;
-  text-align: center;
-  margin-top: -8px; 
-}
-*/
 
 .myBtnTodo {
   @apply fixed bottom-20 z-10 right-8 text-white text-lg bg-[#41bd47] px-6 py-4 rounded-xl;

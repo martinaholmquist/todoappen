@@ -10,16 +10,6 @@ export interface CustomButtonProps {
   isDisabled?: boolean
 }
 
-export interface SearchCityProps {
-  city: string
-  setCity: (city: string) => void
-}
-
-export interface SearchPreferencesProps {
-  preferences: string
-  setPreferences: (preferences: string) => void
-}
-
 export interface UserProps {
   id: number
   timeoftask: string
@@ -41,11 +31,6 @@ export interface authProps {
   email: string
   password: string
   role: string
-}
-
-export interface FilterProps {
-  city: string
-  preferences: string
 }
 
 export interface taskProps {

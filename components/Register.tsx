@@ -5,13 +5,8 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import axios from "axios"
-import { authProps } from "@/types"
 import { UserProps } from "@/types"
 import { useAuth } from "@/components/AuthContext"
-
-interface onSignupProps {
-  user: UserProps
-}
 
 export default function SignupPage() {
   const router = useRouter()

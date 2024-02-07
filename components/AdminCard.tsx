@@ -3,8 +3,6 @@
 import { useState } from "react"
 import { AdminProps } from "@/types"
 import CustomButton from "./CustomButton"
-import Image from "next/image"
-import { AlarmClockCheck, Calendar } from "lucide-react"
 import axios from "axios"
 import { useAuth } from "@/components/AuthContext"
 import { useRouter } from "next/navigation"

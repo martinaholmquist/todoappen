@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar"
 import "./globals.css"
 import type { Metadata } from "next"
 import { AuthProvider } from "@/components/AuthContext"
@@ -16,10 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"relative"}>
-        <AuthProvider>
-          {/* AuthProvider encapsulates its children with the AuthContext */}
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   )

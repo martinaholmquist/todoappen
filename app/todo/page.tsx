@@ -3,17 +3,20 @@ import { FilterProps, UserProps } from "@/types"
 import { NextPage } from "next"
 
 interface Props {
-  searchParams: FilterProps
   users: UserProps
 }
 
-const Page: NextPage<Props> = ({ searchParams }) => {
-  // Antag att searchParams har blivit definierad tidigare eller hämtas dynamiskt
-
+const Page: NextPage<Props> = ({}) => {
   return (
     <>
       <div>
-        <Todo searchParams={searchParams} />
+        <Todo
+          id={0}
+          task={""}
+          dateoftask={""}
+          timeoftask={""}
+          isPerformed={false}
+        />
       </div>
     </>
   )
