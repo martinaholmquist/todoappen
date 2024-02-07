@@ -167,7 +167,7 @@ export default function CreateToDoPage() {
                           : ""
                       }`}
                     >
-                      Tid (xx-xx)
+                      Tid (xx:xx)
                     </label>
                   </div>
 
@@ -200,12 +200,12 @@ export default function CreateToDoPage() {
 
                   {/* Error message popup */}
                   {errorMessage && (
-                    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+                    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#41bd47] bg-opacity-50">
                       <div className="bg-white p-4 rounded shadow-md">
                         <p>{errorMessage}</p>
                         <button
                           onClick={closeErrorMessage}
-                          className="mt-4 text-sm text-white bg-gray-800 px-4 py-2 rounded"
+                          className="mt-4 text-sm text-white bg-[#41bd47] px-4 py-2 rounded"
                         >
                           Stäng
                         </button>

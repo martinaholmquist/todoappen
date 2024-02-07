@@ -180,7 +180,7 @@ export default function SignupPage() {
                         <p>{errorMessage}</p>
                         <button
                           onClick={closeErrorMessage}
-                          className="mt-4 text-sm text-white bg-primary-blue px-4 py-2 rounded"
+                          className="mt-4 text-sm text-white bg-[#41bd47] px-4 py-2 rounded"
                         >
                           Stäng
                         </button>

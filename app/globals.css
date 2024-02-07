@@ -12,7 +12,7 @@
 }
 
 .text-primary {
-  color: #121d23; /* Här ersätter du med din önskade färgkod  #571D26  och  #121d23 */
+  color: #121d23;
 }
 
 /* START: General styles */
@@ -60,7 +60,7 @@
 }
 
 .todo-card {
-  @apply flex flex-col p-6 justify-center items-start text-primary bg-[#B6D1DE] hover:bg-white hover:shadow-md rounded-3xl;
+  @apply flex flex-col p-6 justify-center items-start text-primary bg-[#bdf5b9] hover:bg-white hover:shadow-md rounded-3xl;
 }
 
 .todo-card__content-title {
@@ -68,7 +68,7 @@
 }
 
 .todo-card__btn-container {
-  @apply hidden group-hover:flex absolute bottom-0 mx-auto z-10;
+  @apply hidden group-hover:flex bottom-0 z-10;
 }
 
 .custom-filter__btn {
@@ -82,6 +82,8 @@
 .custom-filter__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
+
+/*
 
 .footer {
   @apply flex flex-col text-primary  mt-5 border-t border-gray-100;
@@ -121,23 +123,26 @@
 
 .searchbar__input {
   @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
-}
+}*/
 
+/*
 .reset-button {
   @apply ml-8;
   position: relative;
 }
+*/
 /* START: circle for empty knapp */
+
+/*
 .circle-border {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px; /* Anpassa bredden efter behov */
-  height: 60px; /* Anpassa höjden efter behov */
-  border: 2px solid rgb(26, 25, 25); /* Tjockleken på cirkelramen */
-  border-radius: 50%; /* För att göra det till en cirkel */
-  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);  Liten skugga runt cirkeln */
+  width: 60px; 
+  height: 60px; 
+  border: 2px solid rgb(26, 25, 25);
+  border-radius: 50%; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,11 +151,12 @@
 .reset-text {
   display: block;
   text-align: center;
-  margin-top: -8px; /* Justera detta värde för att centrera texten vertikalt */
+  margin-top: -8px; 
 }
+*/
 
 .myBtnTodo {
-  @apply fixed bottom-20 z-10 right-8 text-white text-lg bg-primary-blue px-6 py-4 rounded-xl;
+  @apply fixed bottom-20 z-10 right-8 text-white text-lg bg-[#41bd47] px-6 py-4 rounded-xl;
 }
 
 .none {

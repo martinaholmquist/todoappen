@@ -13,10 +13,7 @@ const config: Config = {
       },
       colors: {
         "black-100": "#2B2C35",
-        "primary-blue": {
-          DEFAULT: "#0C4163",
-        },
-        //"secondary-orange": "#f79761",
+
         "light-white": {
           DEFAULT: "rgba(59,60,152,0.03)",
           100: "rgba(59,60,152,0.02)",
@@ -28,3 +25,6 @@ const config: Config = {
   plugins: [],
 }
 export default config
+/*"primary-blue": {
+          DEFAULT: "#0C4163",
+        },*/

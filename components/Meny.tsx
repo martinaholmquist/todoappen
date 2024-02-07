@@ -4,7 +4,7 @@ import { FC, useState } from "react"
 import { Menu, X } from "lucide-react"
 import axios from "axios"
 import { useAuth } from "@/components/AuthContext"
-import { useRouter } from "next/navigation"
+import router, { useRouter } from "next/navigation"
 
 const MobileNavbarList = (props: { titelRef: string; titel: string }) => {
   return (
@@ -43,6 +43,8 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
       auth.setAccessToken(null)
       localStorage.removeItem("accessToken")
 
+      alert("Du är nu utloggad!")
+
       router.push("/")
     } catch (error) {
       console.error("Error logging out:", error)
@@ -50,6 +52,13 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
   }
 
   console.log("är den satt till null nu då från meny?", auth.accessToken)
+
+  const accessToken = auth.getAccessToken()
+
+  const tokenPayloadRole = accessToken
+    ? JSON.parse(atob(accessToken.split(".")[1]))
+    : null
+  const role = tokenPayloadRole ? tokenPayloadRole.Role.toUpperCase() : null
   return (
     <nav className="">
       <div className="">
@@ -63,6 +72,9 @@ const Meny: FC<MobileNavBarProps> = ({}) => {
 
       {isOpen && (
         <ul className=" absolute top-4 left-64">
+          {role === "ADMIN" && (
+            <MobileNavbarList titel={"ADMIN"} titelRef={"/admin"} />
+          )}
           <MobileNavbarList titel={"PROFIL"} titelRef={"/profile"} />
           <MobileNavbarList titel={"TODO"} titelRef={"/todo"} />
           <li

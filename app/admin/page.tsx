@@ -1,18 +1,18 @@
-import Profile from "@/components/Profile"
+import AdminPage from "@/components/AdminPage"
 import { UserProps } from "@/types"
 import { NextPage } from "next"
+import { AdminProps } from "@/types"
 
 interface Props {
-  users: UserProps
+  //users: UserProps
+  users: AdminProps
 }
 
 const Page: NextPage<Props> = () => {
-  // Antag att searchParams har blivit definierad tidigare eller hämtas dynamiskt
-
   return (
     <>
       <div>
-        <Profile />
+        <AdminPage id={0} username={""} email={""} active={false} />
       </div>
     </>
   )

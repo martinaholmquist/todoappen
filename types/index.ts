@@ -29,6 +29,13 @@ export interface UserProps {
   role: string
 }
 
+export interface AdminProps {
+  id: number
+  username: string
+  email: string
+  active: boolean
+}
+
 export interface authProps {
   username: string
   email: string

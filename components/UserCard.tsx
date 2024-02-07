@@ -16,16 +16,17 @@ interface UserCardProps {
 const UserCard = ({ tasks }: UserCardProps) => {
   const auth = useAuth()
 
-  const accessToken = auth.getAccessToken() // Anropa funktionen för att få access token
+  const accessToken = auth.getAccessToken()
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const { id, task, dateoftask, timeoftask, isPerformed } = tasks
   const router = useRouter()
+
   const handleTaskUpdate = async () => {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/tasks/updatetaskperformed",
         {
-          id: tasks.id, // Skicka id för att identifiera uppgiften
+          id: tasks.id,
           isPerformed: true,
         },
         {
@@ -48,6 +49,32 @@ const UserCard = ({ tasks }: UserCardProps) => {
     }
   }
 
+  const handleDeleteTask = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/tasks/deletetask",
+        {
+          id: tasks.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+
+      console.log(response.data)
+      router.refresh()
+    } catch (error: any) {
+      if (error.response) {
+        console.error("Response error:", error.response.data)
+      } else {
+        console.error("Other error:", error.message)
+      }
+      console.log("Delete task failed, try again!!!!", error.message)
+    }
+  }
+
   if (!tasks) {
     return <div>task information not available</div>
   }
@@ -57,22 +84,18 @@ const UserCard = ({ tasks }: UserCardProps) => {
       <div className="flex w-full justify-between">
         <div className="flex items-center gap-2">
           <AlarmClockCheck />
-          <p className="todo-card__content-title">
-            <p>{timeoftask}</p>
-          </p>
+          <p className="todo-card__content-title">{timeoftask}</p>
         </div>
 
         <div className="flex items-center gap-2">
           <Calendar />
-          <p className="todo-card__content-title">
-            <p>{dateoftask}</p>
-          </p>
+          <p className="todo-card__content-title">{dateoftask}</p>
         </div>
       </div>
 
       <div className="my-6 flex w-full justify-center">
         <p className="text-[30px] leading-[26px] font-bold capitalize">
-          <p>{task}</p>
+          {task}
         </p>
       </div>
 
@@ -96,20 +119,37 @@ const UserCard = ({ tasks }: UserCardProps) => {
         )}
       </div>
 
-      {/* Visa knappen endast om uppgiften inte är klar */}
-      {!isPerformed && (
-        <div className="relative flex  mt-10">
+      <div className="flex justify-between items-center">
+        {/* Visa knappen endast om uppgiften inte är klar */}
+        <div>
+          {!isPerformed && (
+            <div className="relative flex  mt-10 pr-3">
+              <div className="todo-card__btn-container ">
+                <CustomButton
+                  containerStyles="w-full  py-[16px]
+            rounded-full bg-[#41bd47]"
+                  textStyles="text-white text-[20px] leading-[17px]"
+                  title="Klar?"
+                  handleClick={handleTaskUpdate}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* deleteknapp */}
+        <div className="relative justify-center  mt-10">
           <div className="todo-card__btn-container ">
             <CustomButton
               containerStyles="w-full  py-[16px]
             rounded-full bg-[#41bd47]"
               textStyles="text-white text-[20px] leading-[17px]"
-              title="Klar?"
-              handleClick={handleTaskUpdate}
+              title="Ta bort?"
+              handleClick={handleDeleteTask}
             />
           </div>
         </div>
-      )}
+      </div>
 
       {/* Success Modal */}
       {showSuccessModal && (

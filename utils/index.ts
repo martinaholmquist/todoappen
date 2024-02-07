@@ -40,9 +40,11 @@ export async function fetchAllUsers(filters: FilterProps) {
   }
 }
 
-/*
-export async function fetchAllUser() {
-  const response = await fetch("http://localhost:5000/api/users/alluserinfo", {
+export async function fetchAllUser(accessToken: string) {
+  const response = await fetch("http://localhost:5000/api/admin/alluserinfo", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
     cache: "no-cache",
   })
 
@@ -51,7 +53,7 @@ export async function fetchAllUser() {
   return result
 }
 
-
+/*
 export async function fetchUser(accessToken: string) {
   const response = await fetch("http://localhost:5000/api/users/currentuser", {
     headers: {
@@ -65,6 +67,7 @@ export async function fetchUser(accessToken: string) {
   return result
 }*/
 
+/*
 export async function fetchUserTask(accessToken: string) {
   const response = await fetch("http://localhost:5000/api/tasks/mytasks", {
     headers: {
@@ -76,6 +79,36 @@ export async function fetchUserTask(accessToken: string) {
   const result = await response.json()
   console.log(result)
   return result
+}*/
+
+export async function fetchUserTask(accessToken: string) {
+  try {
+    const response = await fetch("http://localhost:5000/api/tasks/mytasks", {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      cache: "no-cache",
+    })
+
+    if (!response.ok) {
+      throw new Error(`API request failed with status: ${response.status}`)
+    }
+
+    const text = await response.text()
+
+    if (!text) {
+      console.log("API returned an empty response.")
+      return [] // Return an empty array or another default value
+    }
+
+    const result = JSON.parse(text)
+
+    console.log(result)
+    return result
+  } catch (error) {
+    console.error("Error fetching user tasks:", error)
+    throw error // Rethrow the error to handle it in the calling code
+  }
 }
 
 /*

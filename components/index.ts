@@ -1,8 +1,6 @@
 import Hero from "./Hero"
 import CustomButton from "./CustomButton"
-import Footer from "./Footer"
 import Navbar from "./Navbar"
-
 import UserCard from "./UserCard"
 import Profile from "./Profile"
 import ChangePassword from "./ChangePassword"
@@ -13,11 +11,12 @@ import ToTheTopButton from "./ToTheTopButton"
 import Meny from "./Meny"
 import CreateToDo from "./CreateToDo"
 import EndAccount from "./EndAccount"
+import AdminPage from "./AdminPage"
+import AdminCard from "./AdminCard"
 
 export {
   Hero,
   CustomButton,
-  Footer,
   Navbar,
   UserCard,
   Todo,
@@ -29,4 +28,6 @@ export {
   ChangePassword,
   CreateToDo,
   EndAccount,
+  AdminPage,
+  AdminCard,
 }
