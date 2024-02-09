@@ -1,7 +1,14 @@
 TodoApp
-This is a simple Todo application that allows users to manage their tasks. The application is built using React, Next.js, and Tailwind CSS. It includes authentication features, allowing users to sign up, log in, and access their personalized todo list.
+This is a simple Todo application built with React, Next.js, and Tailwind CSS for the frontend,
+and Spring Boot with Spring Security and MySQL DB for the backend.
+The full application can be set up by combining both the frontend and backend repositories.
+
+Backend Repository
+The backend of the TodoApp can be found in the following repository:https://github.com/martinaholmquist/todoapp
 
 Features
+This is a simple Todo application that allows users to manage their tasks.
+It includes authentication features, allowing users to sign up, log in, and access their personalized todo list.
 User Authentication: Users can sign up and log in securely using email and password.
 Authorization: Different roles (USER and ADMIN) determine the level of access users have to specific endpoints.
 Todo Management: Users can view, add, update, and delete their tasks.
