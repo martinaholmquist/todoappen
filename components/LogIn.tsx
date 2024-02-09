@@ -44,7 +44,9 @@ export default function LogInPage() {
         console.error("Other error:", error.message)
       }
       console.log("Signup failed", error.message)
-      setErrorMessage("Felaktigt användarnamn eller lösenord")
+      setErrorMessage(
+        "Har du inget konto? registrera dig vettja! ... eller har du felaktigt användarnamn eller lösenord?"
+      )
     }
   }
   const closeErrorMessage = () => {
@@ -140,15 +142,6 @@ export default function LogInPage() {
                         </button>
                       </Link>
                     </div>
-                    <Link href={"/todo"}>
-                      <button
-                        title="todo"
-                        type="button"
-                        className="  text-[#41bd47] inline-block rounded px-7 pb-2.5 pt-6 text-sm shadow-lg transition duration-150 ease-in-out"
-                      >
-                        todo så länge
-                      </button>
-                    </Link>
 
                     {/* Error message popup */}
                     {errorMessage && (

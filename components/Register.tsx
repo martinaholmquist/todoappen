@@ -158,6 +158,7 @@ export default function SignupPage() {
                       Registrera dig
                     </button>
                   </div>
+                  {/*  
                   <Link href={"/todo"}>
                     <button
                       title="todo"
@@ -167,7 +168,7 @@ export default function SignupPage() {
                       todo så länge
                     </button>
                   </Link>
-
+*/}
                   {/* Error message popup */}
                   {errorMessage && (
                     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
